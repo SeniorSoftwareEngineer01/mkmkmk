@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رسالة حب إلى كوثر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .heart {
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .rose-petal {
+            position: absolute;
+            background: linear-gradient(to bottom right, #ff6b6b, #ff8e8e);
+            border-radius: 150% 0 150% 0;
+            animation: falling linear infinite;
+            opacity: 0.7;
+        }
+        
+        @keyframes falling {
+            0% {
+                top: -10%;
+                transform: rotate(0deg) translateX(0);
+            }
+            100% {
+                top: 100%;
+                transform: rotate(360deg) translateX(100px);
+            }
+        }
+        
+        .game-option {
+            transition: all 0.3s ease;
+        }
+        
+        .game-option:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-4">
+    <div id="petals-container" class="fixed inset-0 overflow-hidden pointer-events-none"></div>
+    
+    <div class="max-w-2xl w-full bg-white rounded-3xl shadow-2xl overflow-hidden transform transition-all duration-500 hover:scale-105">
+        <!-- Header with animated heart -->
+        <div class="bg-gradient-to-r from-pink-500 to-rose-500 p-6 text-center relative">
+            <div class="absolute top-4 left-4 heart text-white text-3xl">
+                <i class="fas fa-heart"></i>
+            </div>
+            <h1 class="text-4xl font-bold text-white mb-2">إلى حبيبتي كوثر</h1>
+            <p class="text-white opacity-90">رسالة حب من القلب إلى القلب</p>
+        </div>
+        
+        <!-- Main content -->
+        <div class="p-8">
+            <div class="text-center mb-8 floating">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                     alt="Couple silhouette" 
+                     class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-rose-200 shadow-lg">
+            </div>
+            
+            <div class="space-y-6 text-gray-800 text-lg leading-relaxed">
+                <p class="text-rose-600 font-medium">
+                    <i class="fas fa-quote-right opacity-50 mr-2"></i>
+                    يا أغلى ما في حياتي، يا من جعلتِ قلبي ينبض بالحب والحياة...
+                </p>
+                
+                <p>
+                    كلما رأيتُ وجهكِ المشرق، أشعر وكأن الكون كله يتوقف ليرى جمالك الذي لا يوصف. عيناكِ نجمتان تهديانني في ظلام الليالي، وابتسامتكِ شمس تدفئ قلبي في أبرد الأيام.
+                </p>
+                
+                <p class="bg-rose-50 p-4 rounded-xl border-r-4 border-rose-400">
+                    <i class="fas fa-heart text-rose-400 mr-2"></i>
+                    كوثر يا حبيبتي، أنتِ أكثر من مجرد حب، أنتِ وطني الذي أعيش لأجله، وجنّتي التي أتمنى أن لا أفارقها أبداً.
+                </p>
+                
+                <p>
+                    أعدكِ أن أكون السند الذي تتكئين عليه، والحضن الدافئ الذي يضمكِ عندما تشعرين بالتعب، والصديق الذي يسمعكِ عندما تحتاجين إلى من يفهمكِ.
+                </p>
+                
+                <div class="flex justify-center my-8">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-rose-400 rounded-full blur-lg opacity-30"></div>
+                        <button onclick="showSurprise()" class="relative bg-gradient-to-r from-rose-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-105">
+                            اضغط هنا يا حبيبتي <i class="fas fa-gamepad ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <p class="text-center text-gray-600 mt-8">
+                    مع كل نبضة قلب.. مع كل نفس أتنفسه.. مع كل لحظة تمر.. 
+                    <span class="text-rose-600 font-bold">أحبك أكثر</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="bg-gray-50 p-4 text-center text-gray-600 border-t border-gray-200">
+            <p>لكل اللحظات الجميلة التي عشناها معاً، ولكل اللحظات الأجمل التي تنتظرنا</p>
+            <div class="flex justify-center space-x-4 mt-3 text-rose-400">
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Surprise Modal -->
+    <div id="surpriseModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 relative">
+            <button onclick="hideSurprise()" class="absolute top-4 left-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="text-center">
+                <div class="text-6xl text-rose-500 mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">لعبة حب لكِ يا كوثر!</h3>
+                <p class="text-gray-600 mb-6">اختر أحد الخيارات التالية:</p>
+                
+                <div class="space-y-4">
+                    <button onclick="showGameResult(1)" class="game-option w-full bg-rose-100 hover:bg-rose-200 text-rose-800 font-medium py-3 px-4 rounded-lg border border-rose-200">
+                        <i class="fas fa-music mr-2"></i> أغنية رومانسية مخصصة لكِ
+                    </button>
+                    
+                    <button onclick="showGameResult(2)" class="game-option w-full bg-pink-100 hover:bg-pink-200 text-pink-800 font-medium py-3 px-4 rounded-lg border border-pink-200">
+                        <i class="fas fa-utensils mr-2"></i> عشاء رومانسي أعدّه بنفسي
+                    </button>
+                    
+                    <button onclick="showGameResult(3)" class="game-option w-full bg-purple-100 hover:bg-purple-200 text-purple-800 font-medium py-3 px-4 rounded-lg border border-purple-200">
+                        <i class="fas fa-film mr-2"></i> ليلة أفلام رومانسية مع الفشار
+                    </button>
+                    
+                    <button onclick="showGameResult(4)" class="game-option w-full bg-blue-100 hover:bg-blue-200 text-blue-800 font-medium py-3 px-4 rounded-lg border border-blue-200">
+                        <i class="fas fa-spa mr-2"></i> يوم عناية وراحة لكِ فقط
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Game Result Modal -->
+    <div id="gameResultModal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-3xl p-8 max-w-md w-full mx-4 relative text-center">
+            <button onclick="hideGameResult()" class="absolute top-4 left-4 text-gray-500 hover:text-gray-700">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div id="resultContent">
+                <!-- Content will be filled by JavaScript -->
+            </div>
+            
+            <button onclick="hideGameResult()" class="mt-6 bg-rose-500 hover:bg-rose-600 text-white px-6 py-2 rounded-full font-medium">
+                شكراً لكِ يا حبيبتي! <i class="fas fa-heart ml-2"></i>
+            </button>
+        </div>
+    </div>
+    
+    <script>
+        // Create rose petals
+        function createPetals() {
+            const container = document.getElementById('petals-container');
+            const petalCount = 15;
+            
+            for (let i = 0; i < petalCount; i++) {
+                const petal = document.createElement('div');
+                petal.classList.add('rose-petal');
+                
+                // Random size
+                const size = Math.random() * 20 + 10;
+                petal.style.width = `${size}px`;
+                petal.style.height = `${size}px`;
+                
+                // Random position
+                petal.style.left = `${Math.random() * 100}%`;
+                
+                // Random animation duration and delay
+                const duration = Math.random() * 5 + 5;
+                const delay = Math.random() * 5;
+                petal.style.animationDuration = `${duration}s`;
+                petal.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(petal);
+            }
+        }
+        
+        // Show surprise modal
+        function showSurprise() {
+            document.getElementById('surpriseModal').classList.remove('hidden');
+        }
+        
+        // Hide surprise modal
+        function hideSurprise() {
+            document.getElementById('surpriseModal').classList.add('hidden');
+        }
+        
+        // Show game result
+        function showGameResult(option) {
+            const resultContent = document.getElementById('resultContent');
+            let content = '';
+            
+            switch(option) {
+                case 1:
+                    content = `
+                        <div class="text-6xl text-rose-500 mb-4">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">أغنية رومانسية لكِ!</h3>
+                        <p class="text-gray-600 mb-4">لقد كتبت لكِ أغنية خاصة تعبر عن حبي لكِ:</p>
+                        <div class="bg-rose-50 p-4 rounded-lg mb-4 text-rose-800 italic">
+                            "كوثر يا نور عيني، يا حبي ويا حياتي<br>
+                            معكِ الدنيا جميلة، وبدونكِ ما تسوى<br>
+                            عينيكِ نجمتين، وقلبكِ بحر من ذهب<br>
+                            وأنا هنا مغرم، من حبكِ ما يروح"
+                        </div>
+                        <p class="text-gray-700">سأغنيها لكِ في أقرب فرصة!</p>
+                    `;
+                    break;
+                    
+                case 2:
+                    content = `
+                        <div class="text-6xl text-pink-500 mb-4">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">عشاء رومانسي!</h3>
+                        <p class="text-gray-600 mb-4">سأعد لكِ عشاءاً رومانسياً مكوناً من:</p>
+                        <ul class="text-left list-disc list-inside mb-4 text-gray-700">
+                            <li>معكرونة بالكريمة البيضاء</li>
+                            <li>سلطة طازجة</li>
+                            <li>شوكولاتة بالفراولة للحلوى</li>
+                            <li>شمعة رومانسية على الطاولة</li>
+                        </ul>
+                        <p class="text-gray-700">كل هذا مع موسيقى هادئة وإضاءة خافتة!</p>
+                    `;
+                    break;
+                    
+                case 3:
+                    content = `
+                        <div class="text-6xl text-purple-500 mb-4">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">ليلة أفلام رومانسية!</h3>
+                        <p class="text-gray-600 mb-4">سنقضي أمسية رائعة بمشاهدة:</p>
+                        <div class="bg-purple-50 p-4 rounded-lg mb-4 text-purple-800">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-popcorn mr-2"></i>
+                                <span>فشار بالكراميل والجبنة</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-blanket mr-2"></i>
+                                <span>بطانية دافئة للتدثر معاً</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-heart mr-2"></i>
+                                <span>أفلام رومانسية من اختياركِ</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">لا تنسي أن تختاري الأفلام التي تحبينها!</p>
+                    `;
+                    break;
+                    
+                case 4:
+                    content = `
+                        <div class="text-6xl text-blue-500 mb-4">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">يوم عناية وراحة!</h3>
+                        <p class="text-gray-600 mb-4">خصصت لكِ يوماً كاملاً للراحة والعناية:</p>
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4 text-blue-800">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-bath mr-2"></i>
+                                <span>حمام دافئ مع الزيوت العطرية</span>
+                            </div>
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-mask mr-2"></i>
+                                <span>قناع للوجه والعناية بالبشرة</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-book-reader mr-2"></i>
+                                <span>وقت للقراءة والاسترخاء</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-700">وسأكون هنا لأحضر لكِ كل ما تحتاجينه!</p>
+                    `;
+                    break;
+            }
+            
+            resultContent.innerHTML = content;
+            hideSurprise();
+            document.getElementById('gameResultModal').classList.remove('hidden');
+        }
+        
+        // Hide game result
+        function hideGameResult() {
+            document.getElementById('gameResultModal').classList.add('hidden');
+        }
+        
+        // Initialize
+        window.onload = function() {
+            createPetals();
+            
+            // Add floating animation to all hearts
+            const hearts = document.querySelectorAll('.fa-heart');
+            hearts.forEach((heart, index) => {
+                heart.classList.add('floating');
+                heart.style.animationDelay = `${index * 0.3}s`;
+            });
+        };
+    </script>
+</body>
+</html>
